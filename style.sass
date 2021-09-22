@@ -1,0 +1,176 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  font-family: 'Inter', sans-serif
+
+@mixin container
+  max-width: 1100px
+  margin: 0 auto
+  padding: 0 1rem
+
+@mixin flex
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 2rem
+  
+@mixin black-button
+  padding: 0.5rem 1rem
+  background: black
+  color: white
+  border: none
+  font-size: 1rem
+  cursor: pointer
+  &:hover
+    text-decoration: underline
+  a
+    text-decoration: none
+    color: white
+
+.container
+  @include container
+ 
+.bg-mintcream
+  background-color: MintCream
+
+.bg-gray
+  background-color: Gray
+  
+.bg-black
+  background-color: black
+  
+.text-white
+  color: white
+
+.flex
+  @include flex
+   
+.black-button
+  @include black-button
+
+nav
+  @include flex
+  max-width: 1100px
+  margin: 0 auto
+  padding: 1rem
+  .nav-collapse
+    display: content
+  .nav-ul
+    ul
+     @include flex
+    li
+      list-style: none
+    a
+      text-decoration: none
+      color: #777777
+      padding: 0 0.25rem
+      &:hover
+        color: #222222
+  .nav-button
+    display: content
+  button
+    @include black-button
+  .brand
+    a
+      text-decoration: none
+      color: #111111
+
+.w-full
+  width: 100%
+
+.hero
+  position: relative
+  img
+    width: 100%
+    height: 500px
+    object-fit: cover
+    brightness: -10%
+  
+.hero-text
+  position: absolute
+  top: 20%
+  left: 10%
+  color: white
+  h1
+    font-size: 3rem
+  p
+    font-size: 1.25rem
+
+.flex-1
+  flex-grow: 1
+
+.w-50
+  width: 50%
+  
+.flex-resp
+  flex-direction: row
+  
+.section-5-grid
+  display: grid
+  grid-template-columns: repeat(4, minmax(0, 1fr))
+  gap: 1rem
+  
+.form-wrapper
+  background-color: gray
+  padding: 4rem
+
+.section-last
+
+.text-white
+  color: white
+  
+footer
+  .flex
+    justify-content: center
+  li
+    list-style: none
+  a
+    text-decoration: none
+    color: white
+    &:hover
+      text-decoration: underline
+    
+.text-center
+  text-align: center 
+  
+$sizes: 1, 2, 3, 4, 5
+@each $size in $sizes
+  .m-#{$size}
+    margin: #{$size}rem
+  .p-#{$size}
+    padding: #{$size}rem
+  .mb-#{$size}
+    margin-bottom: #{$size}rem
+  .mt-#{$size}
+    margin-top: #{$size}rem
+  .pb-#{$size}
+    padding-bottom: #{$size}rem
+  .pt-#{$size}
+     padding-top: #{$size}rem
+  .py-#{$size}
+     padding: #{$size}rem 0
+  .px-#{$size}
+     padding: 0 #{$size}rem
+  .my-#{$size}
+     margin: #{$size}rem 0
+  .mx-#{$size}
+     margin: 0 #{$size}rem
+  
+@media (max-width: 600px)
+  .w-50
+    width: 100%
+  .flex-resp
+    flex-direction: column
+  .section-5-grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  .nav-ul
+    display: none
+    
+@media (min-width: 600px)
+  .nav-button
+    display: none
+  .nav-collapse
+    display: none
