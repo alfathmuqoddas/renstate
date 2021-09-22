@@ -1,2 +1,2 @@
-# renstate
-RenState Landing page Built with Sass
+# RentState
+## Landing page Built with Sass
