@@ -12,7 +12,6 @@
 <body>
 <nav>
   <div class="brand"><a href="#"><h1>RentState</h1></a></div>
-  <button class="nav-button">Menu</button>
   <div class="nav-ul">
     <ul>
       <li><a href="#">Home</a></li>
@@ -23,8 +22,19 @@
       <li><a href="#"><button>Sign Up</button></a></li>
     </ul>
   </div>
+  <button class="nav-button" id="navbar-button" onClick="letNavbar()">Menu</button>
 </nav>
-<div class="nav-collapse">HELLO</div>
+<div id="navbar-collapsible" class="collapsible-navbar container relative bg-white border-b-2 border-green-400 hidden">
+  <ul class="leading-loose">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Service</a></li>
+    <li><a href="#">Contract</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Sign In</a></li>
+    <li><a href="#"><button class="black-button">Sign Up</button></a></li>
+  </ul>
+</div>
 
 <section class="section-1">
   <div class="hero container">
@@ -153,5 +163,16 @@
     <p class="text-white text-center">RentState Copyright ©2021</p>
   </div>
 </footer>
+ 
+  <script>
+    function letNavbar() {
+  var x = document.getElementById("navbar-collapsible");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  </script>
 </body>
 </html>
